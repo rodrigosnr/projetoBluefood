@@ -6,7 +6,7 @@
   <body>
     <div layout:fragment="content">
 		<div>
-			<img th:src="@{images/bf_iconeUsuario.png}" id="imgIconeUsuario" />
+			<img th:src="@{/images/bf_iconeUsuario.png}" id="imgIconeUsuario" />
 			<h1>Autenticação</h1>
 			<form method="post" action="">
 				<fieldset>
@@ -18,9 +18,13 @@
 			<br />
 
 			<div id="mensagemDeErro">Aqui vai uma mensagem de erro.</div>
-			<br /> <input type="button" value="Criar conta do usuário"
-				onclick="location.href='clienteCadastro.html';"> <br /> <input
-				type="button" value="Criar conta do Restaurante"
+			<br />
+
+			<form method="get" th:action="@{/public/cliente/new}">
+				<input type="submit" value="Criar conta do usuário" />
+			</form>
+
+			<br /> <input type="button" value="Criar conta do Restaurante"
 				onclick="location.href='restauranteCadastro.html';" />
 		</div>
 	</div>
